@@ -29,6 +29,23 @@ def is_descending(input_list:list[float]) -> bool:
     return True
 
 # Part 5
-#def largest_between
+def largest_between(input_list:list[int], lower:int, upper:int) -> any:
+    if lower < 0 or upper < 0 or upper < lower:
+        return None
+    bignum = float("-inf")
+    bigidx = None
+    for idx in range(lower, upper):
+        if input_list[idx] > bignum:
+            bignum = input_list[idx]
+            bigidx = idx
+    return bigidx
+
+
+    #result = 0
+    #idx = 1
+    #for num in input_list:
+    #    if num < input_list[idx] and upper >= idx >= lower:
+    #        result = idx - 1
+    #    idx += 1
 
 # Part 6

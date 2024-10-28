@@ -39,7 +39,16 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Part 5
-
+    def test1_largest_between(self):
+        input1 = [6,2,5,4,3]
+        result = lab5.largest_between(input1,1,4)
+        expected = 2
+        self.assertEqual(expected, result)
+    def test2_largest_between(self):
+        input1 = [6,2,5,4,3]
+        result = lab5.largest_between(input1,4,1)
+        expected = None
+        self.assertEqual(expected, result)
 
     # Part 6
 
