@@ -11,6 +11,8 @@ import data
 
 
 # Part 3
+# This function takes two inputs of class Time and adds them together, being sure that seconds don't exceed 60,
+# and returns the total as class Time
 def time_add(time1:data.Time, time2:data.Time) -> data.Time:
     time3 = data.Time(0,0,0)
     time3.hour = time1.hour + time2.hour
@@ -22,6 +24,8 @@ def time_add(time1:data.Time, time2:data.Time) -> data.Time:
     return time3
 
 # Part 4
+# This function checks if the input (of list[float]) has the float values ordered from highest to lowest and
+# returns a boolean value.
 def is_descending(input_list:list[float]) -> bool:
     for i in range(len(input_list)-1):
         if input_list[i] < input_list[i+1]:
@@ -49,3 +53,17 @@ def largest_between(input_list:list[int], lower:int, upper:int) -> any:
     #    idx += 1
 
 # Part 6
+# This function takes an input of list[Point] and finds the point which is furthest from (0,0) and returns it's
+# index from the list.
+def furthest_from_origin(input_list:list[data.Point]) -> any:
+    if not input_list:
+        return None
+    maxpoint = float("-inf")
+    maxidx = None
+    #for point in input_list:
+    for idx, point in enumerate(input_list):
+        pointdist = (point.x**2 + point.y**2)**0.5
+        if pointdist > maxpoint:
+            maxpoint = pointdist
+            maxidx = idx
+    return maxidx

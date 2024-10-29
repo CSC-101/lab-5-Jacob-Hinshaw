@@ -51,9 +51,16 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Part 6
-
-
-
+    def test1_furthest_from_origin(self):
+        input = [data.Point(1,1), data.Point(5,5)]
+        result = lab5.furthest_from_origin(input)
+        expected = 1
+        self.assertEqual(expected, result)
+    def test2_furthest_from_origin(self):
+        input = [data.Point(1,1), data.Point(5,5), data.Point(-10,5), data.Point(0,0)]
+        result = lab5.furthest_from_origin(input)
+        expected = 2
+        self.assertEqual(expected, result)
 
 
 if __name__ == '__main__':
